@@ -1,0 +1,938 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@400;500;600;700;800&display=swap');
+
+/* ==============================
+   COLORES Y ESTILOS GENERALES
+============================== */
+
+:root {
+    --bg: #03040d;
+    --panel: #091a36;
+    --panel2: #101d45;
+    --blue: #5574ff;
+    --cyan: #83c7ff;
+    --purple: #765bff;
+    --violet: #a855f7;
+    --text: #f4f7ff;
+    --muted: #b6c6e4;
+    --line: rgba(133, 177, 255, .2);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+    color: var(--text);
+    line-height: 1.6;
+    background-color: var(--bg);
+    background-image:
+        radial-gradient(2px 2px at 20px 30px, #ffffff88, transparent),
+        radial-gradient(2px 2px at 80px 120px, #83c7ff66, transparent),
+        radial-gradient(1px 1px at 150px 80px, #ffffff77, transparent),
+        radial-gradient(2px 2px at 220px 180px, #a855f766, transparent),
+        radial-gradient(ellipse at top, #17245a 0%, #080d24 45%, #03040d 100%);
+    background-size:
+        250px 250px,
+        300px 300px,
+        200px 200px,
+        350px 350px,
+        cover;
+    background-attachment: fixed;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+.brand {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* ==============================
+   NAVEGACIÓN
+============================== */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: rgba(3, 11, 27, .92);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+}
+
+.nav {
+    max-width: 1180px;
+    margin: auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: 800;
+}
+
+.brand-mark {
+    color: var(--cyan);
+    font-size: 29px;
+}
+
+.brand small {
+    display: block;
+    color: var(--muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+}
+
+.navlinks {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 22px;
+}
+
+.navlinks a {
+    color: #e3eaff;
+    font-size: 13px;
+    padding: 7px 0;
+    border-bottom: 2px solid transparent;
+    transition: .3s;
+}
+
+.navlinks a:hover,
+.navlinks a.active {
+    color: var(--cyan);
+    border-color: var(--purple);
+}
+
+/* ==============================
+   CONTENIDO PRINCIPAL
+============================== */
+
+main {
+    max-width: 1180px;
+    margin: auto;
+    padding: 28px 24px 60px;
+}
+
+/* ==============================
+   INICIO
+============================== */
+
+.hero {
+    position: relative;
+    min-height: 430px;
+    margin: 25px auto;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    overflow: hidden;
+    border-radius: 18px;
+    background: #071526;
+}
+
+.hero img {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(3, 8, 25, .2) 40%,
+        rgba(3, 8, 25, .9) 100%
+    );
+}
+
+.hero-copy {
+    position: relative;
+    z-index: 2;
+    width: 48%;
+    margin-left: auto;
+    text-align: right;
+}
+
+.hero-copy h1 {
+    color: white;
+    font-size: 42px;
+    margin: 0 0 15px;
+}
+
+.hero-copy p {
+    color: #e2eaff;
+}
+
+/* ==============================
+   BOTONES
+============================== */
+
+.btn,
+button,
+.boton,
+input[type="submit"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 25px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 25px;
+    background: linear-gradient(120deg, #4f6cff, #765bff, #a855f7);
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(85, 116, 255, .25);
+    transition: .3s ease;
+}
+
+.btn:hover,
+button:hover,
+.boton:hover,
+input[type="submit"]:hover {
+    background: linear-gradient(90deg, #a855f7, #2196f3);
+    transform: translateY(-2px) scale(1.03);
+    box-shadow: 0 4px 15px rgba(118, 91, 255, .4);
+}
+
+/* ==============================
+   TÍTULOS DE SECCIÓN
+============================== */
+
+.section-title {
+    margin: 42px 0 18px;
+}
+
+.section-title h2 {
+    margin: 0;
+    font-size: 28px;
+    color: white;
+}
+
+.section-title p {
+    color: var(--muted);
+}
+
+/* ==============================
+   TARJETAS
+============================== */
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.grid.four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 15px;
+    background: rgba(9, 26, 54, .85);
+    backdrop-filter: blur(10px);
+    transition: .3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: var(--blue);
+    box-shadow: 0 8px 25px rgba(85, 116, 255, .15);
+}
+
+.card img {
+    width: 100%;
+    height: 160px;
+    object-fit: contain;
+    background: #071329;
+}
+
+.card-body {
+    padding: 18px;
+}
+
+.card-body h3 {
+    font-size: 17px;
+    color: white;
+}
+
+.card-body p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.icon-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 21px;
+    text-align: center;
+}
+
+.icon-card img {
+    width: 100%;
+    height: 150px;
+    margin: 14px 0;
+    object-fit: contain;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: #071329;
+}
+
+.icon-card .btn {
+    margin-top: auto;
+}
+
+/* ==============================
+   BANNERS GENERALES
+============================== */
+
+.banner {
+    position: relative;
+    min-height: 230px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #030b1b;
+}
+
+.banner img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    filter: brightness(.65);
+}
+
+.banner-copy {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding: 40px;
+    text-shadow: 0 2px 10px #000;
+}
+
+.banner h1 {
+    margin: 10px 0;
+    color: white;
+    font-size: clamp(30px, 4vw, 48px);
+}
+
+.banner p {
+    color: white;
+}
+
+/* ==============================
+   BANNERS DE SECCIONES
+============================== */
+
+.missions-banner,
+.astronaut-banner,
+.information-banner,
+.contact-banner {
+    position: relative;
+    min-height: 380px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+    border-radius: 18px;
+    background-color: #030b1b;
+}
+
+.missions-banner img,
+.astronaut-banner img,
+.information-banner img,
+.contact-banner img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    filter: brightness(.55);
+    background-color: #030b1b;
+}
+
+.missions-banner::after,
+.astronaut-banner::after,
+.information-banner::after,
+.contact-banner::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(
+        90deg,
+        rgba(3, 8, 25, .85) 0%,
+        rgba(3, 8, 25, .45) 50%,
+        rgba(3, 8, 25, .10) 100%
+    );
+}
+
+.missions-banner .banner-copy,
+.astronaut-banner .banner-copy,
+.information-banner .banner-copy,
+.contact-banner .banner-copy {
+    position: relative;
+    z-index: 2;
+    width: 60%;
+    max-width: 650px;
+    padding: 45px;
+    text-shadow: 0 2px 10px #000;
+}
+
+.missions-banner .banner-copy h1,
+.astronaut-banner .banner-copy h1,
+.information-banner .banner-copy h1,
+.contact-banner .banner-copy h1 {
+    margin: 10px 0;
+    color: white;
+    font-size: clamp(32px, 4vw, 48px);
+    background: none;
+    -webkit-text-fill-color: white;
+}
+
+.missions-banner .banner-copy p,
+.astronaut-banner .banner-copy p,
+.information-banner .banner-copy p,
+.contact-banner .banner-copy p {
+    color: white;
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.missions-banner .eyebrow {
+    color: var(--cyan);
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+/* ==============================
+   SECCIÓN DE ASTRONAUTAS
+============================== */
+
+.astronaut-section {
+    margin-top: 30px;
+    padding: 26px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: rgba(9, 18, 43, .8);
+    backdrop-filter: blur(10px);
+}
+
+.astronaut-section h2 {
+    margin-top: 0;
+    font-size: 28px;
+}
+
+.astronaut-section > p {
+    max-width: 900px;
+    color: var(--muted);
+}
+
+.astronaut-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 20px;
+}
+
+.astronaut-card {
+    padding: 18px;
+    border: 1px solid var(--line);
+    border-radius: 13px;
+    background: rgba(13, 37, 73, .65);
+}
+
+.astronaut-card h3 {
+    font-size: 16px;
+}
+
+.astronaut-card p {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+/* ==============================
+   PREGUNTAS FRECUENTES
+============================== */
+
+.columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+}
+
+.faq details {
+    margin-bottom: 10px;
+    padding: 14px 17px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: rgba(9, 18, 43, .8);
+    backdrop-filter: blur(8px);
+    scroll-margin-top: 110px;
+}
+
+.faq summary {
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.faq details p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.75;
+}
+
+.faq details a {
+    color: var(--cyan);
+    text-decoration: underline;
+}
+
+/* ==============================
+   GALERÍA
+============================== */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.gallery figure {
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: rgba(9, 18, 43, .85);
+    transition: .3s ease;
+}
+
+.gallery figure:hover {
+    transform: translateY(-4px);
+    border-color: var(--blue);
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #071329;
+}
+
+.gallery figcaption {
+    padding: 12px 5px 5px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* ==============================
+   CONTACTO
+============================== */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1.2fr .8fr;
+    gap: 26px;
+}
+
+.form-panel,
+.contact-info {
+    padding: 26px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: rgba(9, 18, 43, .85);
+    backdrop-filter: blur(10px);
+}
+
+label {
+    display: block;
+    margin: 12px 0 6px;
+    color: #e3eaff;
+    font-size: 13px;
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #294979;
+    border-radius: 8px;
+    outline: none;
+    background: #030d20;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--blue);
+    outline: 2px solid rgba(85, 116, 255, .35);
+}
+
+.contact-info p {
+    color: var(--muted);
+}
+
+.contact-info hr {
+    margin: 25px 0;
+    border: 0;
+    border-top: 1px solid var(--line);
+}
+
+.note {
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* ==============================
+   PIE DE PÁGINA
+============================== */
+
+footer {
+    border-top: 1px solid var(--line);
+    background: rgba(3, 11, 27, .92);
+}
+
+.footer-inner {
+    max-width: 1180px;
+    margin: auto;
+    padding: 22px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer-brand {
+    color: white;
+    font-weight: 700;
+}
+
+/* ==============================
+   TÍTULOS CON DEGRADADO
+============================== */
+
+header h1,
+main h1 {
+    background: linear-gradient(90deg, #2196f3, #765bff, #a855f7);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: bold;
+}
+
+/* Los títulos dentro de los banners permanecen blancos */
+.hero-copy h1,
+.banner h1,
+.missions-banner h1,
+.astronaut-banner h1,
+.information-banner h1,
+.contact-banner h1 {
+    background: none;
+    color: white;
+    -webkit-text-fill-color: white;
+}
+
+/* ==============================
+   TABLETAS
+============================== */
+
+@media (max-width: 800px) {
+    .nav {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .navlinks {
+        gap: 14px;
+    }
+
+    .hero {
+        min-height: 400px;
+        padding: 20px;
+    }
+
+    .hero-copy {
+        width: 100%;
+        padding: 28px;
+        border-radius: 12px;
+        background: rgba(3, 8, 25, .65);
+        text-align: center;
+    }
+
+    .hero img {
+        height: 100%;
+        min-height: 220px;
+        max-height: 300px;
+    }
+
+    .grid,
+    .grid.four {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .columns,
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-copy {
+        padding: 28px;
+    }
+
+    .astronaut-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==============================
+   BANNERS EN TABLETAS
+============================== */
+
+@media (max-width: 768px) {
+    .missions-banner,
+    .astronaut-banner,
+    .information-banner,
+    .contact-banner {
+        min-height: 320px;
+    }
+
+    .missions-banner .banner-copy,
+    .astronaut-banner .banner-copy,
+    .information-banner .banner-copy,
+    .contact-banner .banner-copy {
+        width: 85%;
+        padding: 25px;
+    }
+
+    .missions-banner .banner-copy h1,
+    .astronaut-banner .banner-copy h1,
+    .information-banner .banner-copy h1,
+    .contact-banner .banner-copy h1 {
+        font-size: 32px;
+    }
+
+    .missions-banner .banner-copy p,
+    .astronaut-banner .banner-copy p,
+    .information-banner .banner-copy p,
+    .contact-banner .banner-copy p {
+        font-size: 13px;
+    }
+}
+
+/* ==============================
+   CELULARES
+============================== */
+
+@media (max-width: 520px) {
+    main {
+        padding: 18px 14px 40px;
+    }
+
+    .nav {
+        padding: 12px 15px;
+    }
+
+    .navlinks {
+        width: 100%;
+        gap: 10px;
+        row-gap: 6px;
+    }
+
+    .navlinks a {
+        padding: 6px;
+        font-size: 12px;
+    }
+
+    .grid,
+    .grid.four,
+    .astronaut-grid,
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .hero {
+        min-height: 280px;
+    }
+
+    .hero-copy {
+        padding: 20px;
+    }
+
+    .hero-copy h1 {
+        font-size: clamp(27px, 8vw, 34px);
+    }
+
+    .hero img {
+        height: 100%;
+        min-height: 220px;
+    }
+
+    .icon-card img {
+        height: 180px;
+    }
+
+    .astronaut-section {
+        padding: 18px;
+    }
+
+    .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .gallery img {
+        height: 210px;
+    }
+
+    .banner {
+        min-height: 200px;
+    }
+
+    .banner img {
+        opacity: .7;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+    .missions-banner,
+    .astronaut-banner,
+    .information-banner,
+    .contact-banner {
+        min-height: 280px;
+    }
+
+    .missions-banner .banner-copy,
+    .astronaut-banner .banner-copy,
+    .information-banner .banner-copy,
+    .contact-banner .banner-copy {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .missions-banner .banner-copy h1,
+    .astronaut-banner .banner-copy h1,
+    .information-banner .banner-copy h1,
+    .contact-banner .banner-copy h1 {
+        font-size: 28px;
+    }
+}
+/* MARQUESINA EN LAS PREGUNTAS FRECUENTES */
+
+.faq summary {
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+.faq summary:hover {
+    color: #83c7ff;
+    animation: movimiento-pregunta 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes movimiento-pregunta {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(12px);
+    }
+}
+
+.faq details[open] summary {
+    color: #83c7ff;
+    animation: brillo-pregunta 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes brillo-pregunta {
+    from {
+        text-shadow: 0 0 3px #5574ff;
+    }
+
+    to {
+        text-shadow: 0 0 12px #83c7ff, 0 0 20px #765bff;
+    }
+}
+
+.faq details {
+    transition: transform .4s ease, box-shadow .4s ease;
+}
+
+.faq details:hover {
+    transform: translateX(6px);
+    box-shadow: 0 0 18px rgba(118, 91, 255, .3);
+}
+
+@media (max-width: 520px) {
+    .faq summary {
+        white-space: normal;
+    }
+}

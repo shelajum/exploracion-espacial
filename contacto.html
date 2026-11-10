@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto | Exploración Espacial</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+<header>
+    <nav class="nav">
+        <a class="brand" href="index.html">
+            <span class="brand-mark">🪐</span>
+            <span>Exploración Espacial<small>Más allá de lo conocido</small></span>
+        </a>
+        <div class="navlinks">
+            <a href="index.html">Inicio</a>
+            <a href="contenido.html">Misiones</a>
+            <a href="astronautas.html">Astronautas</a>
+            <a href="informacion.html">Más información</a>
+            <a class="active" href="contacto.html">Contacto</a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <section class="banner contact-banner">
+        <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1600&q=85" alt="Cielo estrellado">
+        <div class="banner-copy">
+            <h1>Contáctanos</h1>
+            <p>¿Tienes alguna pregunta, sugerencia o tema que te gustaría conocer? Escríbenos.</p>
+        </div>
+    </section>
+
+    <section class="contact-layout">
+        <form class="form-panel" onsubmit="event.preventDefault();document.getElementById('mensaje-confirmacion').textContent='¡Gracias!';">
+            <h2>Envíanos un mensaje</h2>
+            <p class="note">Completa los campos.</p>
+
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required>
+
+            <label for="correo">Correo electrónico</label>
+            <input id="correo" name="correo" type="email" placeholder="tunombre@ejemplo.com" required>
+
+            <label for="tema">Tema de interés</label>
+            <select id="tema" name="tema">
+                <option>Misiones espaciales</option>
+                <option>Astronautas</option>
+                <option>Planetas y galaxias</option>
+                <option>Otro tema</option>
+            </select>
+
+            <label for="mensaje">Mensaje</label>
+            <textarea id="mensaje" name="mensaje" placeholder="Escribe tu mensaje..." required></textarea>
+
+            <button class="btn" type="submit">Enviar mensaje ↗</button>
+            <p id="mensaje-confirmacion" class="note" aria-live="polite"></p>
+        </form>
+
+        <aside class="contact-info">
+            <h2>Información</h2>
+            <p>✉️ exploracionespacial@gmail.com</p>
+            <p>📍 Ciudad de México, México</p>
+            <hr>
+            <h3>¡Sigamos explorando!</h3>
+            <p>La curiosidad es el primer paso para descubrir el universo. Gracias por visitar nuestro sitio.</p>
+            <a class="btn" href="index.html">Volver al inicio ↗</a>
+        </aside>
+    </section>
+</main>
+
+<footer>
+    <div class="footer-inner">
+        <div><span class="footer-brand">🪐 Exploración Espacial</span><br>Más allá de lo conocido</div>
+        <span>El Universo · 2026</span>
+        <span>Explora, Aprende, Descubre.</span>
+    </div>
+</footer>
+</body>
+</html>
